@@ -11,9 +11,13 @@ test('Character', () => {
 
 
 test('Character error name', () => {
-	expect(new Character('P', 'Magician')).toThrowError(new Error('Неверная длина имени'));
+	expect(() => {
+		new Character('P', 'Magician')
+	}).toThrow('Неверная длина имени');
 });
 
 test('Character error type', () => {
-	expect(new Character('Petr', 'People')).toThrowError(new Error('Неверный тип персонажа'));
+	expect(() => {
+		new Character('Petr', 'People')
+	}).toThrow('Неверный тип персонажа');
 });
